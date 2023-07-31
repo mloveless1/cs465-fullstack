@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const host = "";
-const dbURI = "mongodb://127.0.0.1/travlr?directConnection=true";
+const dbURI = "mongodb://127.0.0.1:27017/travlr?directConnection=true";
 const readLine = require("readline");
 
 // avoid current server discovery and monitoring engine is depreciated
