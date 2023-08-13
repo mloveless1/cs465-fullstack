@@ -26,7 +26,7 @@ const tripsList = async (req, res) => {
         })
 };
 
-// GET: /trips/:tripCode - returns a single trip
+// GET: /trips/tripCode - returns a single trip
 const tripsFindByCode = async (req, res) => {
     Trip
         .find({ 'code': req.params.tripCode })
@@ -119,9 +119,9 @@ const tripsUpdateTrip = async (req, res) => {
 }
 
 const getUser = (req, res, callback) => {
-    if (req.payload && req.payload.email) {
+    if (req.auth && req.auth.email) {
         User
-            .findOne({ email: req.payload.email })
+            .findOne({ email: req.auth.email })
             .exec((err, user) => {
                 if (!user) {
                     return res

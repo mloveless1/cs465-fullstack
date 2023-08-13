@@ -24,7 +24,7 @@ router
     .post(auth, tripsController.tripsAddTrip);
 
 router
-    .route('/trips/tripCode')
+    .route('/trips/:tripCode')
     .get(tripsController.tripsFindByCode)
     .put(auth, tripsController.tripsUpdateTrip);
 
